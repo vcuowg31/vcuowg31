@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLEX SNEAKER STORE - Step In Style</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        solex: {
+                            dark: '#0B0C10',
+                            card: '#14161D',
+                            accent: '#1E212B',
+                            gold: '#D4AF37',
+                            goldLight: '#E5C158',
+                            goldDark: '#C5A059',
+                            white: '#FFFFFF',
+                            gray: '#9CA3AF',
+                            neon: '#00E676'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+        .glow-gold-lg {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+        }
+        .glow-text-gold {
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+        }
+        .glass-panel {
+            background: rgba(20, 22, 29, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .gradient-gold-text {
+            background: linear-gradient(135deg, #FFFFFF 20%, #E5C158 70%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* AI Laser Scanner Animation */
+        @keyframes scanLaser {
+            0% { top: 0%; opacity: 0.8; }
+            50% { top: 95%; opacity: 1; }
+            100% { top: 0%; opacity: 0.8; }
+        }
+        .laser-line {
+            animation: scanLaser 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-solex-dark text-gray-100 font-sans antialiased min-h-screen flex flex-col selection:bg-solex-gold selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-solex-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- SOLEX Official Brand Logo (Matching Image design) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-solex-accent to-black border border-solex-gold/40 flex items-center justify-center p-1.5 shadow-md group-hover:border-solex-gold transition-colors">
+                    <!-- Custom SVG Shoe Logo with "S" wave from image -->
+                    <svg viewBox="0 0 100 60" class="w-full h-full text-solex-white fill-current transform group-hover:scale-105 transition-transform">
+                        <path d="M12 42 C 20 42, 35 40, 48 42 C 60 44, 78 45, 88 40 C 92 38, 92 32, 85 30 C 72 27, 65 24, 60 18 C 55 12, 45 10, 40 12 C 38 13, 33 19, 28 24 C 22 28, 15 32, 10 36 C 8 38, 8 42, 12 42 Z" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                        <!-- S Slash motion line inside shoe -->
+                        <path d="M30 38 C 42 34, 45 22, 60 26 C 70 28, 75 35, 85 34" fill="none" stroke="#D4AF37" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Sole bottom accent -->
+                        <path d="M14 46 L 86 46" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-black text-xl sm:text-2xl tracking-widest text-white leading-none">SOLEX</span>
+                    <span class="text-[9px] font-bold tracking-[0.2em] text-solex-gold uppercase mt-1">SNEAKER STORE</span>
+                    <span class="text-[7px] font-semibold tracking-[0.25em] text-gray-400 uppercase -mt-0.5">STEP IN STYLE</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-7 font-medium text-xs tracking-wider uppercase">
+                <a href="#hero" class="hover:text-solex-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-solex-gold hover:after:w-full after:transition-all">Trang chủ</a>
+                <a href="#ai-tryon" class="text-solex-goldLight hover:text-white transition-colors py-1 flex items-center gap-1.5 font-bold">
+                    <i class="fa-solid fa-wand-magic-sparkles text-solex-gold animate-pulse"></i> Thử Giày AI
+                </a>
+                <a href="#vision-mission" class="hover:text-solex-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-solex-gold hover:after:w-full after:transition-all">Tầm nhìn</a>
+                <a href="#core-values" class="hover:text-solex-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-solex-gold hover:after:w-full after:transition-all">Giá trị cốt lõi</a>
+                <a href="#products" class="hover:text-solex-gold transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-solex-gold hover:after:w-full after:transition-all">Sản phẩm</a>
+            </nav>
+
+            <!-- Search & Cart -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <!-- Search Bar -->
+                <div class="relative hidden sm:block w-40 lg:w-56">
+                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Tìm mẫu giày..." class="w-full bg-solex-accent/80 text-xs text-white placeholder-gray-400 rounded-full py-2 pl-8 pr-4 focus:outline-none focus:ring-1 focus:ring-solex-gold border border-solex-gold/20 transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-solex-gold text-xs"></i>
+                </div>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCartDrawer()" class="relative bg-solex-accent hover:bg-solex-gold/20 text-white p-2.5 rounded-full border border-solex-gold/30 transition-all duration-300 group">
+                    <i class="fa-solid fa-bag-shopping text-base text-solex-gold group-hover:scale-110 transition-transform"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-solex-gold text-black text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-solex-dark animate-bounce">0</span>
+                </button>
+
+                <!-- Mobile menu toggle -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-solex-gold text-xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Search & Nav -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-solex-gold/20 bg-solex-card px-4 py-4 space-y-3">
+            <div class="relative w-full">
+                <input type="text" id="mobileSearchInput" oninput="handleSearchMobile()" placeholder="Tìm tên giày..." class="w-full bg-solex-accent text-xs text-white placeholder-gray-400 rounded-lg py-2.5 pl-9 pr-4 focus:outline-none border border-solex-gold/30">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-solex-gold text-xs"></i>
+            </div>
+            <div class="flex flex-col space-y-2 text-xs font-semibold uppercase tracking-wider">
+                <a href="#hero" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-solex-accent">Trang chủ</a>
+                <a href="#ai-tryon" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg bg-solex-gold/10 text-solex-gold border border-solex-gold/30">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Thử Giày Ảo AI
+                </a>
+                <a href="#vision-mission" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-solex-accent">Tầm nhìn & Sứ mệnh</a>
+                <a href="#core-values" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-solex-accent">Giá trị cốt lõi</a>
+                <a href="#products" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-solex-accent">Bộ sưu tập Giày</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:py-28 bg-gradient-to-b from-solex-dark via-solex-dark to-solex-card">
+        <!-- Ambient Gold Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-solex-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-solex-gold/10 border border-solex-gold/40 text-solex-gold font-bold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-crown text-solex-goldLight"></i>
+                        THƯƠNG HIỆU SNEAKER ĐẲNG CẤP
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-black font-display tracking-tight text-white leading-tight">
+                        SOLEX SNEAKER STORE <br/>
+                        <span class="gradient-gold-text">STEP IN STYLE</span>
+                    </h1>
+                    
+                    <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Tự hào mang đến bộ sưu tập giày thể thao chính hãng cao cấp. Phong cách thiết kế hiện đại, đường nét uốn lượn động lực học đem lại trải nghiệm êm ái bức phá trong từng bước chân.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#products" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-solex-gold to-solex-goldLight hover:from-solex-goldLight hover:to-solex-gold text-black font-black font-display tracking-wider rounded-xl shadow-lg shadow-solex-gold/20 hover:shadow-solex-gold/40 transform hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center gap-3">
+                            <span>KHÁM PHÁ BỘ SƯU TẬP</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#ai-tryon" class="w-full sm:w-auto px-8 py-4 bg-solex-accent/90 hover:bg-solex-accent text-solex-gold font-bold rounded-xl border border-solex-gold/40 hover:border-solex-gold transition-all duration-300 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>THỬ GIÀY AI</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-solex-gold/20 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl font-black font-display text-white">100%</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider">Chính Hãng</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black font-display text-solex-gold">SOLEX AI</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider">Quét Size Chuẩn</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black font-display text-white">4.9 ★</div>
+                            <div class="text-[11px] text-gray-400 uppercase tracking-wider">Đánh Giá Cao</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute inset-0 bg-solex-gold/20 rounded-3xl transform rotate-3 scale-105 blur-md"></div>
+                        <div class="relative glass-panel rounded-3xl p-6 border border-solex-gold/40 shadow-2xl overflow-hidden group">
+                            
+                            <!-- Official Logo Signboard Badge -->
+                            <div class="absolute top-4 left-4 z-20 bg-solex-dark/90 border border-solex-gold/50 px-3 py-1.5 rounded-xl flex items-center gap-2 backdrop-blur-md">
+                                <div class="w-5 h-5 text-solex-gold">
+                                    <svg viewBox="0 0 100 60" class="w-full h-full fill-current">
+                                        <path d="M12 42 C 20 42, 35 40, 48 42 C 60 44, 78 45, 88 40 C 92 38, 92 32, 85 30 C 72 27, 65 24, 60 18 C 55 12, 45 10, 40 12 C 38 13, 33 19, 28 24 C 22 28, 15 32, 10 36 C 8 38, 8 42, 12 42 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+                                        <path d="M30 38 C 42 34, 45 22, 60 26 C 70 28, 75 35, 85 34" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+                                    </svg>
+                                </div>
+                                <span class="text-[10px] font-black font-display text-white tracking-widest">SOLEX EDITION</span>
+                            </div>
+
+                            <!-- Image -->
+                            <div class="overflow-hidden rounded-2xl relative h-80 sm:h-96 flex items-center justify-center bg-solex-dark">
+                                <img id="heroImage" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Solex Air Max" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="mt-4 flex justify-between items-end">
+                                <div>
+                                    <p class="text-[10px] text-solex-gold font-bold uppercase tracking-widest">Mẫu Mới Độc Quyền</p>
+                                    <h3 class="text-lg font-bold text-white mt-0.5">Solex Cyber Gold Limited</h3>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xl font-black font-display text-solex-gold">3.900.000 ₫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Virtual Try-On Studio Section -->
+    <section id="ai-tryon" class="py-20 bg-solex-card relative border-y border-solex-gold/20 overflow-hidden">
+        <!-- Tech Hologram Background FX -->
+        <div class="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-solex-gold px-3.5 py-1.5 bg-solex-gold/10 rounded-full border border-solex-gold/30 inline-flex items-center gap-2 mb-3">
+                    <i class="fa-solid fa-microchip text-solex-gold"></i> SOLEX AI TECHNOLOGY
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    PHÒNG THỬ GIÀY <span class="gradient-gold-text">ẢO AI</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-3 font-light leading-relaxed">
+                    Trải nghiệm công nghệ AI ướm thử giày thực tế, quét Hologram phân tích bàn chân và đề xuất Size chuẩn 100% cho riêng bạn.
+                </p>
+            </div>
+
+            <!-- AI Studio Interactive Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Controls & Selector -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Step 1: Foot Image Source -->
+                    <div class="glass-panel p-6 rounded-2xl border border-solex-gold/30">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-solex-gold text-black text-xs font-black flex items-center justify-center">1</span>
+                            Chọn Hình Bàn Chân Thử Giày
+                        </h3>
+
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <button onclick="setSampleFoot('male')" id="btnFootMale" class="foot-sample-btn active py-3 px-3 rounded-xl border border-solex-gold bg-solex-gold/20 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-mars text-solex-gold"></i> Mẫu Chân Nam
+                            </button>
+                            <button onclick="setSampleFoot('female')" id="btnFootFemale" class="foot-sample-btn py-3 px-3 rounded-xl border border-gray-700 hover:border-solex-gold text-gray-300 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-venus text-pink-400"></i> Mẫu Chân Nữ
+                            </button>
+                        </div>
+
+                        <!-- Upload custom foot picture -->
+                        <label class="border-2 border-dashed border-gray-700 hover:border-solex-gold rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer transition-colors bg-solex-dark/50">
+                            <i class="fa-solid fa-cloud-arrow-up text-solex-gold text-2xl mb-1"></i>
+                            <span class="text-xs font-medium text-gray-300">Tải lên ảnh chân của bạn</span>
+                            <span class="text-[10px] text-gray-500 mt-0.5">Hỗ trợ JPG, PNG (Tối đa 5MB)</span>
+                            <input type="file" id="footImageUpload" accept="image/*" onchange="handleFootUpload(event)" class="hidden">
+                        </label>
+                    </div>
+
+                    <!-- Step 2: Choose Shoe to Try On -->
+                    <div class="glass-panel p-6 rounded-2xl border border-solex-gold/30">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-solex-gold text-black text-xs font-black flex items-center justify-center">2</span>
+                            Chọn Mẫu Giày Solex Để Ướm
+                        </h3>
+
+                        <div id="aiShoeSelector" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-56 overflow-y-auto pr-1">
+                            <!-- Dynamic rendering by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Action Scan Button -->
+                    <button onclick="runAIScan()" class="w-full py-4 bg-gradient-to-r from-solex-gold to-solex-goldLight hover:from-solex-goldLight hover:to-solex-gold text-black font-black font-display tracking-widest text-sm rounded-xl shadow-lg shadow-solex-gold/20 flex items-center justify-center gap-2 transition-all transform active:scale-98">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>BẮT ĐẦU QUÉT AI HOLOGRAM</span>
+                    </button>
+                </div>
+
+                <!-- Right: AI Interactive Display Canvas -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel rounded-3xl p-6 border border-solex-gold/40 relative overflow-hidden bg-solex-dark shadow-2xl">
+                        
+                        <!-- AI Header status -->
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-solex-neon animate-ping"></span>
+                                <span class="text-xs font-bold font-display text-white tracking-wider">AI VIRTUAL STUDIO LIVE</span>
+                            </div>
+                            <span id="aiStatusBadge" class="text-[11px] font-bold px-3 py-1 rounded-full bg-solex-gold/20 text-solex-gold border border-solex-gold/30">
+                                Sẵn sàng thử
+                            </span>
+                        </div>
+
+                        <!-- Canvas Foot & Overlay Area -->
+                        <div id="aiStage" class="relative w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden bg-black flex items-center justify-center border border-gray-800">
+                            
+                            <!-- Hologram Laser Overlay Line -->
+                            <div id="laserScanner" class="hidden absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-solex-gold to-transparent laser-line z-30 shadow-[0_0_15px_#D4AF37]"></div>
+
+                            <!-- Foot Background Image -->
+                            <img id="aiFootImg" src="https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 transition-all duration-500">
+
+                            <!-- Shoe Overlay Image -->
+                            <div id="aiShoeOverlay" class="absolute z-20 w-64 sm:w-80 cursor-grab active:cursor-grabbing transition-all duration-300 transform scale-90">
+                                <img id="aiOverlayImg" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" class="w-full h-auto drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)] filter contrast-110">
+                            </div>
+
+                            <!-- Hologram Target Markers -->
+                            <div id="aiMarkers" class="hidden absolute inset-0 z-10 pointer-events-none">
+                                <div class="absolute top-1/3 left-1/3 w-8 h-8 border-t-2 border-l-2 border-solex-gold animate-pulse"></div>
+                                <div class="absolute bottom-1/3 right-1/3 w-8 h-8 border-b-2 border-r-2 border-solex-gold animate-pulse"></div>
+                            </div>
+                        </div>
+
+                        <!-- AI Analysis Metrics Box -->
+                        <div class="mt-4 pt-4 border-t border-gray-800 grid grid-cols-3 gap-3 text-center">
+                            <div class="bg-solex-accent/60 p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase font-semibold">Độ ôm chân (Fit)</p>
+                                <p id="aiFitScore" class="text-base font-black text-solex-gold font-display mt-0.5">98% Perfect</p>
+                            </div>
+                            <div class="bg-solex-accent/60 p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase font-semibold">Size đề xuất</p>
+                                <p id="aiSuggestedSize" class="text-base font-black text-white font-display mt-0.5">EU 41</p>
+                            </div>
+                            <div class="bg-solex-accent/60 p-3 rounded-xl border border-gray-800">
+                                <p class="text-[10px] text-gray-400 uppercase font-semibold">Cảm giác đệm</p>
+                                <p class="text-base font-black text-solex-neon font-display mt-0.5">Êm ái 10/10</p>
+                            </div>
+                        </div>
+
+                        <!-- Add to Cart Directly from AI -->
+                        <div class="mt-4 flex gap-3">
+                            <button onclick="addCurrentAIShoeToCart()" class="flex-1 py-3 bg-solex-accent hover:bg-solex-gold/20 text-solex-gold border border-solex-gold/40 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> Thêm Giỏ Hàng Mẫu Này
+                            </button>
+                            <button onclick="buyCurrentAIShoeNow()" class="flex-1 py-3 bg-solex-gold hover:bg-solex-goldLight text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shadow-solex-gold/20">
+                                <i class="fa-solid fa-bolt"></i> Mua Ngay Đơn Này
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="py-20 bg-solex-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-solex-gold px-3.5 py-1.5 bg-solex-gold/10 rounded-full border border-solex-gold/30 inline-block mb-3">
+                    HÀNH TRÌNH THƯƠNG HIỆU
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    TẦM NHÌN & <span class="gradient-gold-text">SỨ MỆNH</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-3 font-light leading-relaxed">
+                    Khẳng định vị thế hàng đầu trong ngành giày thể thao cao cấp với tinh thần "Step In Style".
+                </p>
+            </div>
+
+            <!-- Vision & Mission Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Vision Card -->
+                <div class="glass-panel rounded-3xl p-8 sm:p-10 border border-solex-gold/30 hover:border-solex-gold transition-all duration-500 relative group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-solex-gold/10 text-solex-gold border border-solex-gold/30 flex items-center justify-center text-2xl shadow-lg mb-6 group-hover:bg-solex-gold group-hover:text-black transition-all">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold font-display text-white mb-3">TẦM NHÌN XA</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Trở thành chuỗi cửa hàng Sneaker cao cấp hàng đầu Việt Nam và vươn tầm khu vực. <strong class="text-solex-gold font-semibold">SOLEX SNEAKER STORE</strong> định hướng dẫn dắt xu hướng thời trang đường phố với phong cách uốn lượn động lực học độc bản.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-800 flex items-center gap-2 text-xs text-solex-gold font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Phát triển hệ sinh thái 2026 - 2030</span>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="glass-panel rounded-3xl p-8 sm:p-10 border border-solex-gold/30 hover:border-solex-gold transition-all duration-500 relative group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-solex-gold/10 text-solex-gold border border-solex-gold/30 flex items-center justify-center text-2xl shadow-lg mb-6 group-hover:bg-solex-gold group-hover:text-black transition-all">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold font-display text-white mb-3">SỨ MỆNH CAO CẢ</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Cung cấp những đôi giày chính hãng đạt chuẩn chất lượng quốc tế. Mọi thiết kế từ Solex không chỉ tôn lên cá tính cá nhân mà còn đem lại sự thoải mái tuyệt đối trên từng bước di chuyển.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-800 flex items-center gap-2 text-xs text-solex-gold font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Đồng hành cùng cộng đồng Sneakerhead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="core-values" class="py-20 bg-solex-card relative border-y border-solex-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-solex-gold px-3.5 py-1.5 bg-solex-gold/10 rounded-full border border-solex-gold/30 inline-block mb-3">
+                    GIÁ TRỊ CỐT LÕI
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+                    TRIẾT LÝ <span class="gradient-gold-text">THƯƠNG HIỆU</span>
+                </h2>
+            </div>
+
+            <!-- 4 Core Values Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 01 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-solex-gold transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-3xl font-black font-display text-solex-gold/40 mb-4 group-hover:text-solex-gold transition-colors">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Chất Lượng Chuẩn</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Cam kết 100% chính hãng. Kiểm định vật liệu da dệt và đế đúc nguyên khối nghiêm ngặt.</p>
+                </div>
+
+                <!-- 02 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-solex-gold transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-3xl font-black font-display text-solex-gold/40 mb-4 group-hover:text-solex-gold transition-colors">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Đột Phá Phong Cách</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Slogan Step In Style khẳng định cá tính đường phố thời thượng, bắt kịp xu hướng toàn cầu.</p>
+                </div>
+
+                <!-- 03 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-solex-gold transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-3xl font-black font-display text-solex-gold/40 mb-4 group-hover:text-solex-gold transition-colors">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Dịch Vụ Tận Tâm</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Tư vấn chọn size AI thông minh, bảo hành keo chỉ trọn đời và giao hàng hỏa tốc 24/7.</p>
+                </div>
+
+                <!-- 04 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800 hover:border-solex-gold transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-3xl font-black font-display text-solex-gold/40 mb-4 group-hover:text-solex-gold transition-colors">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Đổi Mới Công Nghệ</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Ứng dụng AI Virtual Try-on giúp mua sắm thông minh, chính xác và tiện lợi nhất.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-solex-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Title & Filter Tabs -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-solex-gold mb-2 block">BỘ SƯU TẬP GIÀY 2026</span>
+                    <h2 class="text-3xl sm:text-4xl font-black font-display text-white">10 SẢN PHẨM GIÀY SOLEX HOT NHẤT</h2>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2 bg-solex-card p-1.5 rounded-xl border border-gray-800 text-xs font-semibold">
+                    <button onclick="filterCategory('all')" id="btn-all" class="filter-btn active px-4 py-2 rounded-lg transition-all bg-solex-gold text-black">Tất Cả</button>
+                    <button onclick="filterCategory('bestseller')" id="btn-bestseller" class="filter-btn px-4 py-2 rounded-lg transition-all text-gray-400 hover:text-white">Bán Chạy</button>
+                    <button onclick="filterCategory('hot')" id="btn-hot" class="filter-btn px-4 py-2 rounded-lg transition-all text-gray-400 hover:text-white">Hot Trend</button>
+                    <button onclick="filterCategory('sale')" id="btn-sale" class="filter-btn px-4 py-2 rounded-lg transition-all text-gray-400 hover:text-white">Giảm Giá</button>
+                </div>
+            </div>
+
+            <!-- Products Grid (10 items) -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+                <!-- JavaScript renders 10 products dynamically -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-solex-card border-t border-solex-gold/20 text-gray-400 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                
+                <!-- Brand Info with Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-solex-accent border border-solex-gold/40 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 100 60" class="w-full h-full text-white fill-current">
+                                <path d="M12 42 C 20 42, 35 40, 48 42 C 60 44, 78 45, 88 40 C 92 38, 92 32, 85 30 C 72 27, 65 24, 60 18 C 55 12, 45 10, 40 12 C 38 13, 33 19, 28 24 C 22 28, 15 32, 10 36 C 8 38, 8 42, 12 42 Z" fill="none" stroke="currentColor" stroke-width="5"/>
+                                <path d="M30 38 C 42 34, 45 22, 60 26 C 70 28, 75 35, 85 34" fill="none" stroke="#D4AF37" stroke-width="6"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-display font-black text-xl text-white tracking-widest leading-none">SOLEX</span>
+                            <span class="text-[8px] font-bold tracking-[0.2em] text-solex-gold uppercase mt-1">SNEAKER STORE</span>
+                        </div>
+                    </a>
+                    <p class="text-xs leading-relaxed max-w-sm text-gray-400">
+                        SOLEX SNEAKER STORE - STEP IN STYLE. Thương hiệu giày thể thao hàng đầu với thiết kế biểu tượng uốn lượn cá tính, tiên phong trải nghiệm thử giày ảo AI.
+                    </p>
+                    <div class="flex gap-3 text-sm">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-solex-accent flex items-center justify-center text-gray-300 hover:text-solex-gold border border-gray-800 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-solex-accent flex items-center justify-center text-gray-300 hover:text-solex-gold border border-gray-800 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-solex-accent flex items-center justify-center text-gray-300 hover:text-solex-gold border border-gray-800 transition-all"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Khám Phá</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#hero" class="hover:text-solex-gold transition-colors">Trang chủ</a></li>
+                        <li><a href="#ai-tryon" class="hover:text-solex-gold transition-colors">Phòng thử giày AI</a></li>
+                        <li><a href="#vision-mission" class="hover:text-solex-gold transition-colors">Tầm nhìn & Sứ mệnh</a></li>
+                        <li><a href="#products" class="hover:text-solex-gold transition-colors">Bộ sưu tập Giày</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Hỗ Trợ</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-solex-gold transition-colors">Hướng dẫn quét size AI</a></li>
+                        <li><a href="#" class="hover:text-solex-gold transition-colors">Chính sách bảo hành</a></li>
+                        <li><a href="#" class="hover:text-solex-gold transition-colors">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover:text-solex-gold transition-colors">Tra cứu đơn hàng</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Cửa Hàng</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-solex-gold mt-0.5"></i>
+                            <span>123 Đường Lê Duẩn, Thanh Khê, Đà Nẵng</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-solex-gold"></i>
+                            <span>1900 6789 - 0905 123 456</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-solex-gold"></i>
+                            <span>support@solexstore.vn</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500 gap-4">
+                <p>&copy; 2026 SOLEX SNEAKER STORE. STEP IN STYLE. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gray-300">Điều khoản sử dụng</a>
+                    <a href="#" class="hover:text-gray-300">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Slide-out Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden transition-all">
+        <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-solex-card text-white shadow-2xl flex flex-col border-l border-solex-gold/30">
+                <div class="p-6 border-b border-gray-800 flex items-center justify-between bg-solex-dark">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-bag-shopping text-solex-gold text-xl"></i>
+                        <h3 class="text-base font-bold font-display">GIỎ HÀNG CỦA BẠN</h3>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic rendering by JS -->
+                </div>
+
+                <div class="p-6 border-t border-gray-800 bg-solex-dark space-y-4">
+                    <div class="space-y-1.5 text-xs">
+                        <div class="flex justify-between text-gray-400">
+                            <span>Tạm tính:</span>
+                            <span id="cartSubtotal" class="font-semibold text-white">0 ₫</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>Vận chuyển:</span>
+                            <span class="text-solex-neon font-bold">Miễn phí toàn quốc</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-gray-800">
+                            <span>Tổng thanh toán:</span>
+                            <span id="cartTotal" class="text-solex-gold font-display text-xl">0 ₫</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openCheckoutModal('cart')" class="w-full py-4 bg-gradient-to-r from-solex-gold to-solex-goldLight hover:from-solex-goldLight hover:to-solex-gold text-black font-black font-display text-xs tracking-widest rounded-xl shadow-lg shadow-solex-gold/20 flex items-center justify-center gap-2">
+                        <span>TIẾN HÀNH THANH TOÁN</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div onclick="closeProductModal()" class="absolute inset-0 bg-black/85 backdrop-blur-md"></div>
+        <div class="relative glass-panel rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-solex-gold/40 z-10 max-h-[90vh] flex flex-col md:flex-row bg-solex-card">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 text-gray-400 hover:text-white bg-solex-dark rounded-full w-9 h-9 flex items-center justify-center border border-gray-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="md:w-1/2 bg-solex-dark flex items-center justify-center p-6 relative">
+                <img id="modalImg" src="" alt="" class="w-full h-64 sm:h-80 object-cover rounded-2xl">
+                <span id="modalTag" class="absolute top-4 left-4 text-[10px] font-bold px-3 py-1 rounded-md text-black bg-solex-gold uppercase">Tag</span>
+            </div>
+
+            <div class="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <h3 id="modalTitle" class="text-2xl font-bold font-display text-white mb-2">Tên Giày</h3>
+                    <p id="modalPrice" class="text-2xl font-black text-solex-gold font-display mb-4">0 ₫</p>
+                    <p id="modalDesc" class="text-xs text-gray-300 leading-relaxed mb-6">Mô tả sản phẩm...</p>
+
+                    <!-- Shoe Size Selector -->
+                    <div class="mb-6">
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase mb-2">Chọn Size Giày (EU)</label>
+                        <div class="flex flex-wrap gap-2" id="sizeSelector">
+                            <button onclick="selectSize(this)" class="size-btn px-3.5 py-2 rounded-lg border border-gray-700 text-xs font-semibold hover:border-solex-gold transition-all">39</button>
+                            <button onclick="selectSize(this)" class="size-btn px-3.5 py-2 rounded-lg border border-solex-gold text-xs font-semibold bg-solex-gold text-black active">40</button>
+                            <button onclick="selectSize(this)" class="size-btn px-3.5 py-2 rounded-lg border border-gray-700 text-xs font-semibold hover:border-solex-gold transition-all">41</button>
+                            <button onclick="selectSize(this)" class="size-btn px-3.5 py-2 rounded-lg border border-gray-700 text-xs font-semibold hover:border-solex-gold transition-all">42</button>
+                            <button onclick="selectSize(this)" class="size-btn px-3.5 py-2 rounded-lg border border-gray-700 text-xs font-semibold hover:border-solex-gold transition-all">43</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-800 flex gap-3">
+                    <button id="modalAddToCartBtn" class="flex-1 py-3.5 bg-solex-accent hover:bg-solex-gold/20 text-solex-gold border border-solex-gold/40 font-bold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm Giỏ Hàng
+                    </button>
+                    <button id="modalBuyNowBtn" class="flex-1 py-3.5 bg-solex-gold hover:bg-solex-goldLight text-black font-black rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-solex-gold/20">
+                        <i class="fa-solid fa-bolt"></i> Mua Ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal (Xác Nhận Họ Tên & SĐT) -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div onclick="closeCheckoutModal()" class="absolute inset-0 bg-black/85 backdrop-blur-md"></div>
+        <div class="relative glass-panel rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-solex-gold/40 z-10 flex flex-col bg-solex-card">
+            
+            <div class="p-6 border-b border-gray-800 flex items-center justify-between bg-solex-dark">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-solex-gold text-black flex items-center justify-center text-lg font-bold">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold font-display text-white">XÁC NHẬN ĐẶT HÀNG SOLEX</h3>
+                        <p class="text-[11px] text-gray-400">Vui lòng nhập họ tên & số điện thoại để nhận hàng</p>
+                    </div>
+                </div>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-5">
+                
+                <!-- Order Summary -->
+                <div class="bg-solex-dark p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="text-[10px] font-bold uppercase tracking-wider text-solex-gold flex justify-between">
+                        <span>Sản phẩm thanh toán</span>
+                        <span id="checkoutItemCount" class="text-gray-400">0 sản phẩm</span>
+                    </div>
+                    <div id="checkoutSummaryList" class="space-y-2 max-h-32 overflow-y-auto pr-1"></div>
+                    <div class="pt-2 border-t border-gray-800 flex justify-between items-center">
+                        <span class="text-xs text-gray-400">Tổng tiền:</span>
+                        <span id="checkoutTotalAmount" class="text-lg font-black font-display text-solex-gold">0 ₫</span>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="checkoutForm" onsubmit="handleConfirmOrder(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">
+                                Họ và Tên <span class="text-solex-gold">*</span>
+                            </label>
+                            <input type="text" id="custName" required placeholder="Nguyễn Văn A" class="w-full bg-solex-dark text-white text-xs rounded-xl py-3 px-3.5 border border-gray-700 focus:outline-none focus:border-solex-gold">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">
+                                Số Điện Thoại <span class="text-solex-gold">*</span>
+                            </label>
+                            <input type="tel" id="custPhone" required pattern="[0-9]{9,11}" placeholder="0905123456" class="w-full bg-solex-dark text-white text-xs rounded-xl py-3 px-3.5 border border-gray-700 focus:outline-none focus:border-solex-gold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">
+                            Địa Chỉ Nhận Hàng <span class="text-solex-gold">*</span>
+                        </label>
+                        <input type="text" id="custAddress" required placeholder="Số nhà, Tên đường, Quận/Huyện, Tỉnh/TP" class="w-full bg-solex-dark text-white text-xs rounded-xl py-3 px-3.5 border border-gray-700 focus:outline-none focus:border-solex-gold">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase mb-2">Phương Thức Thanh Toán</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <label class="flex items-center gap-2 p-2.5 bg-solex-dark rounded-xl border border-gray-700 cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="COD" checked class="accent-solex-gold">
+                                <span class="text-xs font-bold text-white">COD</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2.5 bg-solex-dark rounded-xl border border-gray-700 cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="Banking" class="accent-solex-gold">
+                                <span class="text-xs font-bold text-white">QR Bank</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2.5 bg-solex-dark rounded-xl border border-gray-700 cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="MoMo" class="accent-solex-gold">
+                                <span class="text-xs font-bold text-white">MoMo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex gap-3">
+                        <button type="button" onclick="closeCheckoutModal()" class="w-1/3 py-3 bg-solex-accent text-gray-300 font-bold text-xs rounded-xl">Hủy</button>
+                        <button type="submit" class="w-2/3 py-3 bg-solex-gold hover:bg-solex-goldLight text-black font-black font-display text-xs rounded-xl shadow-lg shadow-solex-gold/20">
+                            HOÀN TẤT ĐẶT HÀNG
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div id="orderSuccessModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div onclick="closeSuccessModal()" class="absolute inset-0 bg-black/85 backdrop-blur-md"></div>
+        <div class="relative glass-panel rounded-3xl max-w-lg w-full p-8 text-center border border-solex-gold/40 z-10 bg-solex-card">
+            
+            <div class="w-16 h-16 rounded-full bg-solex-gold/20 border-2 border-solex-gold text-solex-gold flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h3 class="text-2xl font-black font-display text-white mb-1">ĐẶT HÀNG THÀNH CÔNG!</h3>
+            <p class="text-xs text-gray-300 mb-6">Cảm ơn bạn đã lựa chọn <strong class="text-solex-gold">SOLEX SNEAKER STORE</strong>.</p>
+
+            <div id="successDetails" class="bg-solex-dark rounded-2xl p-4 text-left border border-gray-800 text-xs space-y-2 mb-6"></div>
+
+            <button onclick="closeSuccessModal()" class="w-full py-3.5 bg-solex-gold hover:bg-solex-goldLight text-black font-black font-display text-xs rounded-xl uppercase tracking-wider">
+                TIẾP TỤC TRẢI NGHIỆM SOLEX
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-solex-card border border-solex-gold text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-solex-gold text-lg"></i>
+            <span id="toastMsg" class="text-xs font-semibold">Đã thêm vào giỏ hàng!</span>
+        </div>
+    </div>
+
+    <script>
+        // 10 Products Array
+        const products = [
+            {
+                id: 1,
+                name: "Solex Cyber Gold Limited",
+                price: 3900000,
+                category: "hot",
+                tag: "Hot Trend",
+                tagBg: "bg-solex-gold text-black",
+                rating: 5.0,
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+                description: "Mẫu giày phiên bản giới hạn kỷ niệm 2026. Công nghệ đế bọt khí đa chiều êm ái cùng phối màu Đen Vàng Kim thời thượng."
+            },
+            {
+                id: 2,
+                name: "Solex Street Runner V2",
+                price: 2450000,
+                category: "bestseller",
+                tag: "Bán Chạy",
+                tagBg: "bg-solex-gold text-black",
+                rating: 4.9,
+                image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&w=800&q=80",
+                description: "Dòng sản phẩm chạy bộ đường phố chuyên nghiệp với mặt lưới thoáng khí Flyknit đàn hồi cực cao."
+            },
+            {
+                id: 3,
+                name: "Solex Dark Knight High",
+                price: 3100000,
+                category: "hot",
+                tag: "Hot Trend",
+                tagBg: "bg-solex-gold text-black",
+                rating: 4.8,
+                image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80",
+                description: "Giày cổ cao phong cách Streetwear huyền bí. Chất liệu da đúc cao cấp chống nước bảo vệ bàn chân tối đa."
+            },
+            {
+                id: 4,
+                name: "Solex Neo Speed Flash",
+                price: 1950000,
+                category: "sale",
+                tag: "Giảm 30%",
+                tagBg: "bg-red-600 text-white",
+                rating: 4.9,
+                image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=800&q=80",
+                description: "Siêu nhẹ chỉ 220g. Đệm cao su đúc nguyên khối hoàn trả năng lượng trong từng bước sải."
+            },
+            {
+                id: 5,
+                name: "Solex Alpha Stealth Pro",
+                price: 2850000,
+                category: "bestseller",
+                tag: "Bán Chạy",
+                tagBg: "bg-solex-gold text-black",
+                rating: 5.0,
+                image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+                description: "Mẫu Sneaker phối màu xám titan sang trọng, phù hợp outfit công sở năng động hoặc dạo phố thời trang."
+            },
+            {
+                id: 6,
+                name: "Solex Future Wave 2026",
+                price: 3500000,
+                category: "hot",
+                tag: "Mới Ra Mắt",
+                tagBg: "bg-solex-gold text-black",
+                rating: 4.9,
+                image: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80",
+                description: "Thiết kế tương lai với các đường lượn sóng động lực học. Tối ưu cho việc phối đồ Streetwear cực ngầu."
+            },
+            {
+                id: 7,
+                name: "Solex Dynamic Boost",
+                price: 2150000,
+                category: "sale",
+                tag: "Giảm 25%",
+                tagBg: "bg-red-600 text-white",
+                rating: 4.7,
+                image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+                description: "Trọng lượng nhẹ, đệm cao su siêu êm giảm ma sát, hạn chế chấn thương khi tập luyện cường độ cao."
+            },
+            {
+                id: 8,
+                name: "Solex Retro Classic 80s",
+                price: 2600000,
+                category: "bestseller",
+                tag: "Bán Chạy",
+                tagBg: "bg-solex-gold text-black",
+                rating: 4.9,
+                image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80",
+                description: "Cảm hứng cổ điển thập niên 80 tái hiện trên form dáng hiện đại. Phù hợp cho cả Nam & Nữ."
+            },
+            {
+                id: 9,
+                name: "Solex Gold Sovereign",
+                price: 4200000,
+                category: "hot",
+                tag: "Luxury",
+                tagBg: "bg-solex-gold text-black",
+                rating: 5.0,
+                image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
+                description: "Phiên bản Hoàng Gia cao cấp nhất. Lót trong bằng da cừu êm ái và chi tiết mạ vàng tinh xảo."
+            },
+            {
+                id: 10,
+                name: "Solex Urban Flex White",
+                price: 1800000,
+                category: "sale",
+                tag: "Giảm 20%",
+                tagBg: "bg-red-600 text-white",
+                rating: 4.8,
+                image: "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=800&q=80",
+                description: "Giày Sneaker trắng tối giản thanh lịch, chất liệu chống bám bẩn dễ dàng lau chùi dạo phố."
+            }
+        ];
+
+        let cart = [];
+        let selectedSize = '40';
+        let currentAIShoe = products[0];
+        let checkoutItems = [];
+
+        // App Initialization
+        window.onload = function() {
+            renderProducts(products);
+            renderAIShoeSelector();
+            updateCartUI();
+        };
+
+        // Render 10 products
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            items.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = "glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-solex-gold transition-all duration-300 flex flex-col group hover:-translate-y-2 hover:shadow-xl hover:shadow-solex-gold/10";
+                
+                card.innerHTML = `
+                    <div class="relative h-60 overflow-hidden bg-solex-dark flex items-center justify-center">
+                        <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-md ${prod.tagBg} uppercase tracking-wider shadow-md">
+                            ${prod.tag}
+                        </span>
+                        
+                        <button onclick="openProductModal(${prod.id})" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-medium text-xs">
+                            <span class="bg-solex-dark/90 px-4 py-2 rounded-full border border-solex-gold text-solex-gold hover:bg-solex-gold hover:text-black transition-all">
+                                <i class="fa-solid fa-eye mr-1"></i> Xem Chi Tiết
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-[10px] text-solex-gold font-bold uppercase tracking-widest">SOLEX STORE</span>
+                                <span class="text-xs text-amber-400 font-bold"><i class="fa-solid fa-star mr-0.5"></i>${prod.rating}</span>
+                            </div>
+                            <h3 class="font-bold text-white text-base group-hover:text-solex-gold transition-colors line-clamp-1">${prod.name}</h3>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-gray-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block">Giá bán</span>
+                                <span class="text-base font-black font-display text-solex-gold">${formatVND(prod.price)}</span>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="addToCart(${prod.id})" title="Thêm giỏ hàng" class="w-8 h-8 rounded-lg bg-solex-accent text-solex-gold border border-solex-gold/30 hover:bg-solex-gold hover:text-black transition-all flex items-center justify-center">
+                                    <i class="fa-solid fa-cart-plus text-xs"></i>
+                                </button>
+                                <button onclick="buyNowDirect(${prod.id})" title="Mua ngay" class="px-3 h-8 rounded-lg bg-solex-gold hover:bg-solex-goldLight text-black text-xs font-black transition-all">
+                                    MUA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render AI Shoe Selection list
+        function renderAIShoeSelector() {
+            const container = document.getElementById('aiShoeSelector');
+            container.innerHTML = '';
+
+            products.forEach(p => {
+                const btn = document.createElement('button');
+                btn.onclick = () => selectAIShoe(p);
+                btn.className = `p-2 rounded-xl border flex items-center gap-2 transition-all text-left ${p.id === currentAIShoe.id ? 'border-solex-gold bg-solex-gold/20' : 'border-gray-800 bg-solex-dark hover:border-gray-600'}`;
+                btn.innerHTML = `
+                    <img src="${p.image}" class="w-10 h-10 object-cover rounded-lg bg-black">
+                    <div class="min-w-0">
+                        <p class="text-[11px] font-bold text-white truncate">${p.name}</p>
+                        <p class="text-[10px] text-solex-gold font-display">${formatVND(p.price)}</p>
+                    </div>
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function selectAIShoe(shoe) {
+            currentAIShoe = shoe;
+            document.getElementById('aiOverlayImg').src = shoe.image;
+            renderAIShoeSelector();
+            showToast(`Đã chọn ${shoe.name} vào phòng AI`);
+        }
+
+        // AI Hologram Scanner simulation
+        function runAIScan() {
+            const laser = document.getElementById('laserScanner');
+            const markers = document.getElementById('aiMarkers');
+            const badge = document.getElementById('aiStatusBadge');
+
+            laser.classList.remove('hidden');
+            markers.classList.remove('hidden');
+            badge.innerText = "Đang quét AI...";
+            badge.className = "text-[11px] font-bold px-3 py-1 rounded-full bg-solex-gold text-black animate-pulse";
+
+            setTimeout(() => {
+                laser.classList.add('hidden');
+                markers.classList.add('hidden');
+                badge.innerText = "Phân tích xong!";
+                badge.className = "text-[11px] font-bold px-3 py-1 rounded-full bg-solex-neon/20 text-solex-neon border border-solex-neon/40";
+                
+                // Randomize slightly for dynamic feel
+                const sizes = ['39', '40', '41', '42'];
+                const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+                document.getElementById('aiSuggestedSize').innerText = `EU ${randomSize}`;
+                showToast("AI đã quét và tối ưu dáng giày cho bàn chân!");
+            }, 2500);
+        }
+
+        function setSampleFoot(type) {
+            const maleBtn = document.getElementById('btnFootMale');
+            const femaleBtn = document.getElementById('btnFootFemale');
+            const footImg = document.getElementById('aiFootImg');
+
+            if (type === 'male') {
+                footImg.src = "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80";
+                maleBtn.className = "foot-sample-btn py-3 px-3 rounded-xl border border-solex-gold bg-solex-gold/20 text-white text-xs font-semibold flex items-center justify-center gap-2";
+                femaleBtn.className = "foot-sample-btn py-3 px-3 rounded-xl border border-gray-700 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2";
+            } else {
+                footImg.src = "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80";
+                femaleBtn.className = "foot-sample-btn py-3 px-3 rounded-xl border border-solex-gold bg-solex-gold/20 text-white text-xs font-semibold flex items-center justify-center gap-2";
+                maleBtn.className = "foot-sample-btn py-3 px-3 rounded-xl border border-gray-700 text-gray-300 text-xs font-semibold flex items-center justify-center gap-2";
+            }
+        }
+
+        function handleFootUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    document.getElementById('aiFootImg').src = evt.target.result;
+                    showToast("Tải ảnh chân thành công!");
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function addCurrentAIShoeToCart() {
+            addToCart(currentAIShoe.id, '41');
+        }
+
+        function buyCurrentAIShoeNow() {
+            buyNowDirect(currentAIShoe.id);
+        }
+
+        // Cart Actions
+        function addToCart(productId, size = '40') {
+            const prod = products.find(p => p.id === productId);
+            if (!prod) return;
+
+            const existing = cart.find(item => item.id === productId && item.size === size);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    id: prod.id,
+                    name: prod.name,
+                    price: prod.price,
+                    image: prod.image,
+                    size: size,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`Đã thêm ${prod.name} (Size ${size}) vào giỏ!`);
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+            badge.innerText = totalQty;
+
+            const container = document.getElementById('cartItemsContainer');
+            container.innerHTML = '';
+
+            let subtotal = 0;
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 text-xs">
+                        <i class="fa-solid fa-bag-shopping text-3xl mb-2 text-gray-700"></i>
+                        <p>Giỏ hàng chưa có sản phẩm</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach((item, index) => {
+                    subtotal += item.price * item.quantity;
+                    const el = document.createElement('div');
+                    el.className = "flex items-center gap-3 p-3 bg-solex-dark rounded-xl border border-gray-800";
+                    el.innerHTML = `
+                        <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg bg-black">
+                        <div class="flex-1 min-w-0">
+                            <p class="font-bold text-xs text-white truncate">${item.name}</p>
+                            <p class="text-[10px] text-gray-400">Size: ${item.size}</p>
+                            <p class="text-xs font-black text-solex-gold font-display mt-0.5">${formatVND(item.price)}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded bg-solex-accent text-white text-xs flex items-center justify-center">-</button>
+                            <span class="text-xs font-bold text-white">${item.quantity}</span>
+                            <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded bg-solex-accent text-white text-xs flex items-center justify-center">+</button>
+                        </div>
+                    `;
+                    container.appendChild(el);
+                });
+            }
+
+            document.getElementById('cartSubtotal').innerText = formatVND(subtotal);
+            document.getElementById('cartTotal').innerText = formatVND(subtotal);
+        }
+
+        function changeQty(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function toggleCartDrawer() {
+            document.getElementById('cartDrawer').classList.toggle('hidden');
+        }
+
+        function buyNowDirect(productId) {
+            const prod = products.find(p => p.id === productId);
+            if (!prod) return;
+
+            checkoutItems = [{
+                id: prod.id,
+                name: prod.name,
+                price: prod.price,
+                image: prod.image,
+                size: '40',
+                quantity: 1
+            }];
+
+            openCheckoutModal('direct');
+        }
+
+        function openCheckoutModal(type = 'cart') {
+            if (type === 'cart') {
+                if (cart.length === 0) {
+                    showToast("Giỏ hàng đang trống!");
+                    return;
+                }
+                checkoutItems = [...cart];
+                document.getElementById('cartDrawer').classList.add('hidden');
+            }
+
+            const list = document.getElementById('checkoutSummaryList');
+            list.innerHTML = '';
+
+            let total = 0;
+            checkoutItems.forEach(item => {
+                total += item.price * item.quantity;
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between text-xs bg-solex-accent/50 p-2 rounded-lg";
+                row.innerHTML = `
+                    <div class="flex items-center gap-2 truncate">
+                        <img src="${item.image}" class="w-8 h-8 object-cover rounded">
+                        <span class="text-white truncate font-medium">${item.name} (x${item.quantity})</span>
+                    </div>
+                    <span class="font-bold text-solex-gold">${formatVND(item.price * item.quantity)}</span>
+                `;
+                list.appendChild(row);
+            });
+
+            document.getElementById('checkoutItemCount').innerText = `${checkoutItems.length} loại sản phẩm`;
+            document.getElementById('checkoutTotalAmount').innerText = formatVND(total);
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function handleConfirmOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const payment = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            const total = checkoutItems.reduce((s, i) => s + (i.price * i.quantity), 0);
+            const orderCode = 'SLX-' + Math.floor(10000 + Math.random() * 90000);
+
+            document.getElementById('successDetails').innerHTML = `
+                <div class="flex justify-between pb-1 border-b border-gray-800">
+                    <span class="text-gray-400">Mã đơn hàng:</span>
+                    <span class="font-bold text-solex-gold font-display">${orderCode}</span>
+                </div>
+                <div class="flex justify-between pb-1 border-b border-gray-800">
+                    <span class="text-gray-400">Khách hàng:</span>
+                    <span class="font-semibold text-white">${name}</span>
+                </div>
+                <div class="flex justify-between pb-1 border-b border-gray-800">
+                    <span class="text-gray-400">Số điện thoại:</span>
+                    <span class="font-semibold text-white">${phone}</span>
+                </div>
+                <div class="flex justify-between pb-1 border-b border-gray-800">
+                    <span class="text-gray-400">Thanh toán:</span>
+                    <span class="font-semibold text-solex-gold">${payment}</span>
+                </div>
+                <div class="flex justify-between pt-1">
+                    <span class="text-gray-300 font-bold">Tổng tiền:</span>
+                    <span class="text-solex-gold font-display font-black">${formatVND(total)}</span>
+                </div>
+            `;
+
+            cart = [];
+            updateCartUI();
+            closeCheckoutModal();
+            document.getElementById('orderSuccessModal').classList.remove('hidden');
+            document.getElementById('checkoutForm').reset();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('orderSuccessModal').classList.add('hidden');
+        }
+
+        function openProductModal(id) {
+            const p = products.find(i => i.id === id);
+            if (!p) return;
+
+            document.getElementById('modalImg').src = p.image;
+            document.getElementById('modalTitle').innerText = p.name;
+            document.getElementById('modalPrice').innerText = formatVND(p.price);
+            document.getElementById('modalDesc').innerText = p.description;
+            document.getElementById('modalTag').innerText = p.tag;
+
+            document.getElementById('modalAddToCartBtn').onclick = () => {
+                addToCart(p.id, selectedSize);
+                closeProductModal();
+            };
+
+            document.getElementById('modalBuyNowBtn').onclick = () => {
+                checkoutItems = [{
+                    id: p.id,
+                    name: p.name,
+                    price: p.price,
+                    image: p.image,
+                    size: selectedSize,
+                    quantity: 1
+                }];
+                closeProductModal();
+                openCheckoutModal('direct');
+            };
+
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btn').forEach(b => {
+                b.className = "size-btn px-3.5 py-2 rounded-lg border border-gray-700 text-xs font-semibold hover:border-solex-gold transition-all text-white";
+            });
+            btn.className = "size-btn px-3.5 py-2 rounded-lg border border-solex-gold text-xs font-semibold bg-solex-gold text-black active";
+            selectedSize = btn.innerText;
+        }
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.className = "filter-btn px-4 py-2 rounded-lg transition-all text-gray-400 hover:text-white";
+            });
+            document.getElementById(`btn-${cat}`).className = "filter-btn active px-4 py-2 rounded-lg transition-all bg-solex-gold text-black font-bold";
+
+            if (cat === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === cat);
+                renderProducts(filtered);
+            }
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+
+        function handleSearchMobile() {
+            const query = document.getElementById('mobileSearchInput').value.toLowerCase().trim();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+            renderProducts(filtered);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function formatVND(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
